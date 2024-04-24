@@ -135,43 +135,42 @@ function Student() {
       </div>
       <br />
       <table className="table table-dark" align="center">
-        <thead>
-          <tr>
-            <th scope="col">Student Name</th>
-            <th scope="col">Student Address</th>
-            <th scope="col">Student Mobile</th>
-
-            <th scope="col">Option</th>
-          </tr>
-        </thead>
-        {students.map(function fn(student) {
-          return (
-            <tbody>
-              <tr>
-                <td>{student.studentname}</td>
-                <td>{student.studentaddress}</td>
-                <td>{student.mobile}</td>
-                <td>
-                  <button
-                    type="button"
-                    className="btn btn-warning"
-                    onClick={() => editStudent(student)}
-                  >
-                    Edit
-                  </button>
-                  <button
-                    type="button"
-                    className="btn btn-danger"
-                    onClick={() => DeleteStudent(student._id)}
-                  >
-                    Delete
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          );
-        })}
-      </table>
+  <thead>
+    <tr>
+      <th scope="col">Student Name</th>
+      <th scope="col">Student Address</th>
+      <th scope="col">Student Mobile</th>
+      <th scope="col">Option</th>
+    </tr>
+  </thead>
+  {students.map(function fn(student, index) {
+    return (
+      <tbody key={index}>
+        <tr>
+          <td>{student.studentname}</td>
+          <td>{student.studentaddress}</td>
+          <td>{student.mobile}</td>
+          <td>
+            <button
+              type="button"
+              className="btn btn-warning"
+              onClick={() => editStudent(student)}
+            >
+              Edit
+            </button>
+            <button
+              type="button"
+              className="btn btn-danger"
+              onClick={() => DeleteStudent(student._id)}
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    );
+  })}
+</table>
     </div>
   );
 }

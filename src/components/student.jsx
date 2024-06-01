@@ -158,6 +158,7 @@ function Student() {
             >
               Edit
             </button>
+            &nbsp;
             <button
               type="button"
               className="btn btn-danger"
